@@ -1,1 +1,280 @@
+* {
+  font-family: "Karla", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+:root {
+  /* Primary */
+  --Green-lighter: hsl(148, 38%, 91%); /* 200 (lighter) */
+  --Green-medium: hsl(169, 82%, 27%); /* 600 (medium) */
+  --Red: #ff3333;
+
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Grey-medium: hsl(186, 15%, 59%); /* 500 (medium) */
+  --Grey-darker: hsl(187, 24%, 22%); /* 900 (darker) */
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Green-lighter);
+  /* position: relative; */
+}
+
+#form {
+  background-color: var(--White);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 50px, repeat(6, 1fr);
+  column-gap: 12px;
+  padding: 2rem 1.75rem;
+  border-radius: 10px;
+  width: 50%;
+  box-shadow: 0 0 10px var(--Grey-darker);
+  margin: 1.25rem 0;
+}
+
+span {
+  margin-left: 0.2rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--Green-medium);
+}
+
+.inputs-container {
+  margin-bottom: 1.35rem;
+}
+
+.input-width {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border: 2px solid var(--Grey-medium);
+  border-style: solid;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.input-width:focus {
+  outline: none;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--Grey-darker);
+}
+
+.error-msg {
+  margin-top: 0.5rem;
+  color: var(--Red);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#form-container h1 {
+  grid-row: 1/2;
+  grid-column: 1/3;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--Grey-darker);
+}
+
+#fname-div {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+#lname-div {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+#email-div {
+  grid-row: 3/4;
+  grid-column: 1/3;
+}
+
+/* custom radio button */
+
+#radio-div {
+  grid-row: 4/5;
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 12px;
+}
+
+#querylabel {
+  margin-bottom: 1.25rem;
+}
+
+.radio-options {
+  border: 2px solid var(--Grey-medium);
+  padding: 0.8rem 1.25rem;
+  border-radius: 10px;
+  background-color: var(--White);
+}
+
+.radio-options input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  border: 2px solid var(--Grey-medium);
+  border-radius: 50%;
+}
+
+.radio-options input[type="radio"]:before {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: 20% auto;
+  border-radius: 50%;
+}
+
+.radio-options input[type="radio"]:checked:before {
+  background: var(--Green-medium);
+}
+
+.radio-options input[type="radio"]:checked {
+  border: 2px solid var(--Green-medium);
+}
+
+.radio-options label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--Grey-darker);
+  vertical-align: middle;
+}
+
+#opt1-div {
+  grid-column: 1/2;
+}
+
+#opt2-div {
+  grid-column: 2/3;
+}
+
+/* radio end */
+
+#t-area-div {
+  grid-row: 5/6;
+  grid-column: 1/3;
+}
+
+#t-area {
+  resize: none;
+}
+
+#t-area-div {
+  margin-bottom: 1.65rem;
+}
+
+#check-div {
+  grid-row: 6/7;
+  grid-column: 1/3;
+  margin-bottom: 1.5rem;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  accent-color: var(--Green-medium);
+}
+
+.check-label {
+  font-size: 1.25rem;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+#submit-btn {
+  appearance: none;
+  border: none;
+  grid-row: 7/8;
+  grid-column: 1/3;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--Green-medium);
+  color: var(--White);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Alert box */
+
+#alert-box {
+  background-color: var(--Grey-darker);
+  padding: 1.5rem;
+  border-radius: 10px;
+  position: fixed;
+  top: 2%;
+  color: var(--White);
+}
+
+#alert-box p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+#alert-header {
+  display: flex;
+  margin-bottom: 0.8rem;
+}
+
+#alert-header img {
+  margin-right: 0.6rem;
+}
+
+#alert-header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.alert-hidden {
+  display: none;
+}
+
+/* Responsive CSS */
+
+@media screen and (max-width: 480px) {
+  #form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 2rem;
+  }
+
+  #radio-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #opt1-div {
+    margin-bottom: 1rem;
+  }
+
+  #alert-box {
+    width: 375px;
+    margin: 0 1rem;
+  }
+}

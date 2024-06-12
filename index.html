@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form id="form" action="z" novalidate>
+      <h1>Contact Us</h1>
 
+      <div class="inputs-container" id="fname-div">
+        <label for="fname" class="input-label">First Name <span>*</span></label>
+        <input
+          type="text"
+          class="input-control input-width"
+          id="fname"
+          name="fname"
+        />
+        <p class="error-msg hidden"></p>
+      </div>
+
+      <div class="inputs-container" id="lname-div">
+        <label for="lname" class="input-label">Last Name <span>*</span></label>
+        <input
+          type="text"
+          class="input-control input-width"
+          id="lname"
+          name="lname"
+        />
+        <p class="error-msg hidden"></p>
+      </div>
+
+      <div class="inputs-container" id="email-div">
+        <label for="email" class="input-label"
+          >Email Address <span>*</span></label
+        >
+        <input
+          type="email"
+          class="input-control input-width"
+          id="email"
+          name="email"
+        />
+        <p class="error-msg hidden"></p>
+      </div>
+
+      <div class="inputs-container" id="radio-div">
+        <label id="querylabel" class="input-label"
+          >Query Type <span>*</span></label
+        >
+
+        <div id="opt1-div" class="radio-options">
+          <input
+            type="radio"
+            class="input-control"
+            name="query"
+            value="General Enqiry"
+            id="opt1"
+          />
+          <label for="opt1">General Enquiry</label>
+        </div>
+
+        <div id="opt2-div" class="radio-options">
+          <input
+            type="radio"
+            class="input-control"
+            name="query"
+            value="Support Request"
+            id="opt2"
+          />
+          <label for="opt2">Support Request</label>
+        </div>
+        <p id="radio-errormsg" class="error-msg hidden"></p>
+      </div>
+
+      <div class="inputs-container" id="t-area-div">
+        <label for="t-area" class="input-label">Message <span>*</span></label>
+        <textarea
+          id="t-area"
+          class="input-control input-width"
+          name="message"
+          rows="8"
+        ></textarea>
+        <p class="error-msg hidden"></p>
+      </div>
+
+      <div class="inputs-container" id="check-div">
+        <input type="checkbox" name="check" value="agree" id="check" />
+        <label class="check-label"
+          >I consent to being contacted by the team <span>*</span></label
+        >
+        <p class="error-msg hidden"></p>
+      </div>
+
+      <button id="submit-btn">Submit</button>
+    </form>
+
+    <div class="alert-hidden" id="alert-box">
+      <div id="alert-header">
+        <img src="assets/images/icon-success-check.svg" alt="img" />
+        <h1>Message Sent!</h1>
+      </div>
+
+      <p>Thanks for completing the form we will be in touch soon!</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
