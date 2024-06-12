@@ -116,12 +116,4 @@ const validateInputs = () => {
       "To submit this form, please consent to being contacted"
     );
   }
-
-  if (!setError && !isAgreeError && !radioOpt1.checked && !radioOpt2.checked) {
-    // alert.style.display = "block";
-    alert("There are no errors.");
-  } else {
-    // alert.style.display = "none";
-    alert("There are errors.");
-  }
 };
