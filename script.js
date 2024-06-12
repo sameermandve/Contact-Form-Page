@@ -130,6 +130,6 @@ const validateInputs = () => {
     alert.classList.add("open");
     setTimeout(() => {
       alert.classList.remove("open");
-    }, 2500);
+    }, 2000);
   }
 };
