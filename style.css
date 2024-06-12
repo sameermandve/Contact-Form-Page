@@ -223,17 +223,19 @@ input[type="checkbox"] {
 
 #alert-box {
   background-color: var(--Grey-darker);
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   border-radius: 10px;
   position: fixed;
-  top: 2%;
+  top: -9rem;
   color: var(--White);
+  transition: all 300ms ease-in-out;
 }
 
 #alert-box p {
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
+  text-wrap: wrap;
 }
 
 #alert-header {
@@ -250,8 +252,9 @@ input[type="checkbox"] {
   font-weight: 700;
 }
 
-.alert-hidden {
-  display: none;
+#alert-box.open {
+  top: 1rem;
+  opacity: 1;
 }
 
 /* Responsive CSS */
@@ -274,7 +277,6 @@ input[type="checkbox"] {
   }
 
   #alert-box {
-    width: 375px;
     margin: 0 1rem;
   }
 }

@@ -63,23 +63,28 @@ const validateInputs = () => {
   const lNameValue = lName.value.trim();
   const emailValue = email.value.trim();
   const messageValue = text.value.trim();
+  let errorCount = 0;
 
   if (fNameValue === "") {
     setError(fName, "This field is required");
+    errorCount = errorCount + 1;
   } else {
     setSuccess(fName);
   }
 
   if (lNameValue === "") {
     setError(lName, "This field is required");
+    errorCount = errorCount + 1;
   } else {
     setSuccess(lName);
   }
 
   if (emailValue === "") {
     setError(email, "Email address cannot be empty");
+    errorCount = errorCount + 1;
   } else if (!isValidEmail(emailValue)) {
     setError(email, "Please enter a valid email address");
+    errorCount = errorCount + 1;
   } else {
     setSuccess(email);
   }
@@ -98,12 +103,15 @@ const validateInputs = () => {
     document.querySelector("#radio-errormsg").style.display = "block";
     document.querySelector("#radio-errormsg").innerText =
       "Please select a query type";
+    errorCount = errorCount + 1;
   }
 
   if (messageValue === "") {
     setError(text, "This field is required");
+    errorCount = errorCount + 1;
   } else if (messageValue.length < 50) {
     setError(text, "Message needs at least 50 words");
+    errorCount = errorCount + 1;
   } else {
     setSuccess(text);
   }
@@ -115,5 +123,13 @@ const validateInputs = () => {
       checkBox,
       "To submit this form, please consent to being contacted"
     );
+    errorCount = errorCount + 1;
+  }
+
+  if (errorCount == 0) {
+    alert.classList.add("open");
+    setTimeout(() => {
+      alert.classList.remove("open");
+    }, 2500);
   }
 };
